@@ -49,7 +49,7 @@ const HomePage: React.FC = () => {
     const route: string = '/authenticate';
 
     try {
-      const response = await axios.post(`${url}${route}`, {
+      const response = await axios.post(`https://api.allorigins.win/raw?url=${url}${route}`, {
         headers: {
           'Content-Type': 'application/json',
           'Role-Type': 'IMPEXP',
