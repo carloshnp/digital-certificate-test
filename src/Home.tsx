@@ -65,6 +65,9 @@ const HomePage: React.FC = () => {
           'Content-Type': 'application/json',
           'Role-Type': 'IMPEXP',
           'Authorization': 'Basic SEtuclJZVURheWR5aGZPMVlzeWVMV3B0d1VNYTpURGU5ZWNVREVsMU54dTFxMzNja2x5VjVJbzBh',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Headers': 'Content-Type',
         }
       });
       setMessage({ ...message, health: '', certificate: '', certificateHeader: '', token: response.data });
