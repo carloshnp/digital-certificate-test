@@ -11,11 +11,9 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": {
-        target: "http://localhost:8081",
+      '/api': {
+        target: 'https://siscomex-sapi.estaleiro.serpro.gov.br',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-        secure: false,
       },
     },
   },
