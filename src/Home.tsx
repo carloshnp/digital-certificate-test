@@ -45,17 +45,6 @@ const HomePage: React.FC = () => {
   };
 
   const handleToken = async () => {
-    // try {
-    //   const response = await axios.get('https://localhost:8081/token');
-    //   setMessage({ ...message, token: response.data, certificate: '', certificateHeader: '' });
-    // } catch (error) {
-    //   console.error('Error fetching token:', error);
-    //   setMessage({ ...message, token: 'Error fetching token.' });
-    // }
-
-    // const url: string = 'https://val.portalunico.siscomex.gov.br';
-    // const route: string = '/catp/api/autenticar/';
-
     const url: string = 'https://siscomex-sapi.estaleiro.serpro.gov.br';
     const route: string = '/authenticate';
 
@@ -64,10 +53,7 @@ const HomePage: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
           'Role-Type': 'IMPEXP',
-          'Authorization': 'Basic SEtuclJZVURheWR5aGZPMVlzeWVMV3B0d1VNYTpURGU5ZWNVREVsMU54dTFxMzNja2x5VjVJbzBh',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST',
-          'Access-Control-Allow-Headers': 'Content-Type',
+          'Authorization': 'Basic SEtuclJZVURheWR5aGZPMVlzeWVMV3B0d1VNYTpURGU5ZWNVREVsMU54dTFxMzNja2x5VjVJbzBh'
         }
       });
       setMessage({ ...message, health: '', certificate: '', certificateHeader: '', token: response.data });

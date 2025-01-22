@@ -14,6 +14,7 @@ export default defineConfig({
       '/api': {
         target: 'https://siscomex-sapi.estaleiro.serpro.gov.br',
         changeOrigin: true,
+        secure: false
       },
     },
   },
