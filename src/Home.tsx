@@ -56,7 +56,7 @@ const HomePage: React.FC = () => {
           'Authorization': 'Basic SEtuclJZVURheWR5aGZPMVlzeWVMV3B0d1VNYTpURGU5ZWNVREVsMU54dTFxMzNja2x5VjVJbzBh'
         }
       });
-      setMessage({ ...message, health: '', certificate: '', certificateHeader: '', token: response.data });
+      setMessage({ ...message, health: '', certificate: '', certificateHeader: '', token: response.data.access_token });
     } catch (error) {
       console.error('Error fetching health: ', error)
     }
