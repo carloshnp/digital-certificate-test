@@ -47,16 +47,19 @@ const HomePage: React.FC = () => {
   const handleToken = async () => {
     const url: string = 'https://siscomex-sapi.estaleiro.serpro.gov.br';
     const route: string = '/authenticate';
-
+    
     try {
-      const response = await axios.post(`https://api.allorigins.win/raw?url=${url}${route}`, {
+      const response = await axios.post(`${url}${route}`, {
         headers: {
           'Content-Type': 'application/json',
           'Role-Type': 'IMPEXP',
-          'Authorization': 'Basic SEtuclJZVURheWR5aGZPMVlzeWVMV3B0d1VNYTpURGU5ZWNVREVsMU54dTFxMzNja2x5VjVJbzBh'
+          'Authorization': 'Basic SEtuclJZVURheWR5aGZPMVlzeWVMV3B0d1VNYTpURGU5ZWNVREVsMU54dTFxMzNja2x5VjVJbzBh',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
         }
       });
-      setMessage({ ...message, health: '', certificate: '', certificateHeader: '', token: response.data.access_token });
+      setMessage({ ...message, health: '', certificate: '', certificateHeader: '', token: response.data });
     } catch (error) {
       console.error('Error fetching health: ', error)
     }
